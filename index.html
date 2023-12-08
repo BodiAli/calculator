@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Calculator</title>
+</head>
+<body>
+  <div id="container">
+    <div id="result">
+      <div class="output"></div>
+    </div>
+    <div id="buttons">
+      <div id="all-clear">AC</div>
+      <div id="delete"><img src="./images/output-onlinepngtools.png" alt="delete icon"></div>
+      <div class="numbers percentage">%</div>
+      <div class="operators">/</div>
+      <div class="numbers">7</div>
+      <div class="numbers">8</div>
+      <div class="numbers">9</div>
+      <div class="operators">X</div>
+      <div class="numbers">4</div>
+      <div class="numbers">5</div>
+      <div class="numbers">6</div>
+      <div class="operators">-</div>
+      <div class="numbers">1</div>
+      <div class="numbers">2</div>
+      <div class="numbers">3</div>
+      <div class="operators">+</div>
+      <div id="clickme">Click</div>
+      <div class="numbers">0</div>
+      <div class="numbers">.</div>
+      <div id="equals">=</div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+  <script>
+const clickMeButton = document.querySelector("#clickme");
+
+clickMeButton.addEventListener("click", function () {
+  const resultDiv = document.querySelector("#result");
+  
+  const backgroundImageDiv = document.createElement("div");
+  backgroundImageDiv.classList.add("background-image");
+
+  backgroundImageDiv.style.backgroundImage = 'url("./images/rose.jpg")';
+  backgroundImageDiv.style.backgroundSize = 'cover';
+  backgroundImageDiv.style.backgroundPosition = 'center';
+
+  const textParagraph = document.createElement("p");
+  textParagraph.textContent = "Thanks for trying my Calculator.";
+
+  textParagraph.appendChild(document.createElement("br"));
+
+  const breakText = document.createTextNode("Made by Bodi Ali");
+  textParagraph.appendChild(breakText);
+
+  textParagraph.style.color = 'white';
+  textParagraph.style.textShadow = "0 0 10px green";
+
+  backgroundImageDiv.appendChild(textParagraph);
+
+  resultDiv.appendChild(backgroundImageDiv);
+
+  backgroundImageDiv.offsetHeight;
+
+  backgroundImageDiv.classList.add("show-background");
+
+  setTimeout(() => {
+    resultDiv.removeChild(backgroundImageDiv);
+  }, 5000);
+});
+
+    </script>
+</body>
+</html>
